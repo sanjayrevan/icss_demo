@@ -1,0 +1,135 @@
+/* Header styles */
+.header {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1d3b6c;
+    padding: 15px;
+    color: white;
+    z-index: 1;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #ffcc00;
+}
+
+.phone {
+    display: flex;
+    align-items: center;
+}
+
+.call-button {
+    display: flex;
+    align-items: center;
+    background-color: #ffcc00;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #1d3b6c;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.call-button:hover {
+    background-color: #e6b800;
+}
+
+.call-button img {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+/* Features Section styles */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.feature {
+    max-width: 300px;
+    text-align: center;
+}
+
+.feature h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.feature p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background-color: slateblue;
+    color: #fff;
+}
+.phone{
+    margin-left: 170px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+.imgp{
+    width: 30px;
+    height: 30px;
+    margin-bottom: 0px;
+    margin-right: 8px;
+}
+.button{
+    border-style: solid;
+    height: fit-content;
+}
+ /* Footer Styling */
+        /* Footer Styling for Vertical Alignment */
+        footer.footer {
+            background-color: #1d3b6c;
+            color: white !important;
+            padding: 0px;
+        }
+        
+        .footer-content{
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-evenly;
+        }
+        
+        footer.footer a {
+            color: white !important;
+            text-decoration: none;
+        }
+        
+        footer.footer a:hover {
+            text-decoration: underline;
+        }

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignan ICSS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .contact-mobile-buttons{
+            display: none;
+        }
+        /* Hero Section styles */
+        .hero {
+            background-image: url('assets/download.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: #0f0202;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: black;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* General styles */
+        body,
+        html {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .cta {
+            color: yellow;
+        }
+
+        /* Header styling */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #1d3b6c;
+            position: relative;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1em;
+        }
+
+        /* WhatsApp and phone buttons */
+        .contact-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .contact-buttons a {
+            text-decoration: none;
+        }
+
+        .imgp {
+            width: 30px;
+            height: 30px;
+        }
+
+        .whatsapp,
+        .phone {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #ffcc00;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #1d3b6c;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Hamburger menu styling */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 2em;
+            color: white;
+        }
+
+        /* Hide nav links on mobile */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+           
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 129px;
+                left: 0;
+                /* right: 20px; */
+                background-color: #1d3b6c;
+                width: 200px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                padding: 10px;
+                text-align: center;
+                width: 100%;
+                display: block;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .contact-buttons {
+                justify-content: flex-end;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+           .contact-buttons{
+            display: flex;
+            flex-direction: column;
+           }
+           .whatsapp{
+            margin-left: 170px;
+            margin-right: 10px;
+           }
+          .contact-buttons{
+            display: none;
+          }
+          .contact-mobile-buttons{
+            display: flex;
+            gap: 10px;
+            flex-direction: row;
+          }
+          .phone{
+            margin-left: 0px !important;
+          }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo-ham">
+        <div class="logo">Vignan ICSS</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./courses.html">Courses</a></li>
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a href="./admission.html">Admissions</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">☰</div>
+        </div>
+        <div class="contact-buttons">
+            <a href="https://wa.me/9441248646" class="whatsapp">
+                <img src="assets/download copy.jpeg" alt="WhatsApp Icon" class="imgp" />
+                9441248646
+            </a>
+            <a href="tel:9441248646" class="phone">
+                <img src="assets/download (1).jpeg" alt="Phone Icon" class="imgp" />
+                9441248646
+            </a>
+        </div>
+        <div class="contact-mobile-buttons">
+            <a href="https://wa.me/9441248646" class="whatsapp">
+                <img src="assets/download copy.jpeg" alt="WhatsApp Icon" class="imgp" />
+                
+            </a>
+            <a href="tel:9441248646" class="phone">
+                <img src="assets/download (1).jpeg" alt="Phone Icon" class="imgp" />
+                
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Empowering the Next Generation of Tech Innovators</h1>
+            <p>Join our top-ranked computer education programs and pave your way to a successful career in technology.
+            </p>
+            <a href="courses.html" class="cta">Explore Courses</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="feature">
+            <h2>Expert Faculty</h2>
+            <p>Learn from industry leaders with real-world experience.</p>
+        </div>
+        <div class="feature">
+            <h2>State-of-the-Art Labs</h2>
+            <p>Access the latest technology and tools in our modern lab.</p>
+        </div>
+        <div class="feature">
+            <h2>Hands-on Learning</h2>
+            <p>Engage in practical projects to build real skills.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <p>&copy; 2024 Vignan ICSS. All rights reserved.</p>
+            </div>
+            <div>
+                <p>Opp. Neha Shine Hospital, Mettugadda, Mahabubnagar</p>
+            </div>
+            <div>
+                <p>Email: <a href="mailto:vignan.icss@gmail.com">vignan.icss@gmail.com</a></p>
+                <p>Phone: <a href="tel:9441248646">9441248646</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Toggle hamburger menu
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>

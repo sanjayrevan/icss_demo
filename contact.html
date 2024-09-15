@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vignan ICSS</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .contact-section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .contact-section h1, .contact-section h2 {
+            color: #1d3b6c;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            color: #555;
+            font-size: 18px;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .info-box {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .info-box:hover {
+            transform: scale(1.1); /* Changed this to scale properly */
+        }
+
+        .info-box h3 {
+            color: #1d3b6c;
+            margin-bottom: 10px;
+        }
+
+        .info-box p a {
+            color: #1d3b6c;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 50%;
+            margin: 0 auto;
+            margin-bottom: 50px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .contact-form button[type="submit"] {
+            background-color: #1d3b6c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+
+        .contact-form button[type="submit"]:hover {
+            background-color: #163459;
+        }
+
+        .map-container {
+            margin-bottom: 50px;
+            padding-left: 20px;
+        }
+
+        .form-map {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        label {
+            text-align: left;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Vignan ICSS</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./courses.html">Courses</a></li>
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a href="./admission.html">Admissions</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="phone button">
+            <a href="tel:9441248646" class="call-button">
+                <img src="assets/download (1).jpeg" alt="Phone Icon" class="imgp" /> 
+                9441248646
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="contact-section">
+        <h1>Contact Us</h1>
+        <p>If you have any questions or need further information, feel free to get in touch with us. We're here to help you!</p>
+        
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <div class="info-box">
+                <h3>Our Address</h3>
+                <p>Opposite Neha Shine Hospital, Mettugadda, Mahabubnagar</p>
+            </div>
+            <div class="info-box">
+                <h3>Email Us</h3>
+                <p><a href="mailto:vignan.icss@gmail.com">vignan.icss@gmail.com</a></p>
+            </div>
+            <div class="info-box">
+                <h3>Call Us</h3>
+                <p><a href="tel:9441248646">9441248646</a></p>
+            </div>
+        </div>
+
+        <div class="form-map">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2>Send Us a Message</h2>
+                <form id="contact-form" method="post">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Your email" required>
+
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
+                    <!-- hidden input field -->
+                    <input type="hidden" id="formName" name="formName" value="contact">
+
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+
+            <!-- Location Map -->
+            <div class="map-container">
+                <h2>Find Us</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15281.950978951794!2d78.0106964!3d16.7523923!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bca2996805db611%3A0xe86ce45d601a6a43!2sVignan%20ICSS%20Computer%20Education%20Institute!5e0!3m2!1sen!2sin!4v1726332707746!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <p>&copy; 2024 Vignan ICSS. All rights reserved.</p>
+            </div>
+            
+            <div>
+                <p>Opp. Neha Shine Hospital, Mettugadda, Mahabubnagar</p>
+            </div>
+
+            <div>
+                <p>Email: <a href="mailto:vignan.icss@gmail.com">vignan.icss@gmail.com</a></p>
+                <p>Phone: <a href="tel:9441248646">9441248646</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzdweHFkcbKTPxKMvC-QMmg-CgqpmgMnOMcRDYT-J5WHhqTj9YcG0E-NMZSeXCMHJGdSA/exec';
+        const form = document.getElementById('contact-form');
+    
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+    
+            const formData = new FormData(form);
+    
+            fetch(scriptURL, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text()) // Use response.text() for simpler response handling
+            .then(result => alert('Form submitted successfully!'))
+            .catch(error => alert('Error submitting form!'));
+        });
+    </script>
+</body>
+</html>

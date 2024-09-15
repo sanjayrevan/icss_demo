@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignan ICSS - Courses</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .category {
+            margin: 20px 0;
+        }
+
+        .category button {
+            padding: 10px 20px;
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .category button:hover {
+            background-color: #45a049;
+        }
+
+        .courses-list {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .courses-container {
+            display: flex;
+            /* flex-wrap: wrap; */
+            justify-content: space-between;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .course-box {
+            width: 48%;
+            padding: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .course-box:hover {
+            transform: scale(1.03);
+        }
+
+        .course-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .course-details {
+            font-size: 14px;
+        }
+
+        .course-details ul {
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        /* Short Term Courses: Centering the additional short term course */
+        .additional-course {
+            width: 50%;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        .footer-content.fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #1d3b6c;
+            color: white !important;
+            padding: 0px;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Vignan ICSS</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./courses.html">Courses</a></li>
+                <li><a href="./aboutUs.html">About Us</a></li>
+                <li><a href="./admission.html">Admissions</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="phone button">
+            <a href="tel:9441248646" class="call-button">
+                <img src="assets/download (1).jpeg" alt="Phone Icon" class="imgp" />
+                9441248646
+            </a>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Courses We Offer</h1>
+
+        <!-- Course Categories -->
+        <div class="category">
+            <h2>Select Course Type</h2>
+            <button onclick="showCourses('longTerm')">Long Term Courses</button>
+            <button onclick="showCourses('shortTerm')">Short Term Courses</button>
+        </div>
+        <div class="opening-image" id="opening-image">
+            <img src="./assets/download.jpeg" width="100%" height="100%">
+        </div>
+
+        <!-- Long Term Courses -->
+        <div id="longTerm" class="courses-list">
+            <h3>Long Term Courses</h3>
+            <div class="courses-container">
+                <!-- DCA Course -->
+                <div class="course-box">
+                    <div class="course-title">DCA (Diploma in Computer Applications)</div>
+                    <div class="course-details">
+                        <ul>
+                            <li>Introduction to Computers</li>
+                            <li>Operating System Concepts & Windows</li>
+                            <li>MS Office (Word, Excel, Access & PowerPoint)</li>
+                            <li>Internet Concepts</li>
+                            <li>Programming Basics through 'C' Language</li>
+                            <li>Object-Oriented Concepts through C++</li>
+                            <li>Personality Development Programme - I</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- PGDCA Course -->
+                <div class="course-box">
+                    <div class="course-title">PGDCA (Post Graduate Diploma in Computer Applications)</div>
+                    <div class="course-details">
+                        <h4>SEM-1 (Diploma in Computer Applications)</h4>
+                        <ul>
+                            <li>Introduction to Computers</li>
+                            <li>Operating System Concepts & Windows</li>
+                            <li>MS-Office (Word, Excel, Access & PowerPoint)</li>
+                            <li>Internet Concepts</li>
+                            <li>Programming Basics through 'C' Language</li>
+                            <li>Object-Oriented Concepts through C++</li>
+                            <li>Personality Development Programme - I</li>
+                        </ul>
+                        <h4>SEM-2 (Diploma in Client/Server Technology)</h4>
+                        <ul>
+                            <li>RDBMS & Client/Server Technology</li>
+                            <li>Database Management using Oracle</li>
+                            <li>Designing Graphical Interfaces using Visual Basic</li>
+                            <li>Software Development Cycle & SAD</li>
+                            <li>Project</li>
+                            <li>Personality Development Programme - II</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Short Term Courses -->
+        <div id="shortTerm" class="courses-list">
+            <h3>Short Term Courses</h3>
+            <div class="courses-container">
+                <!-- MS-Office Course -->
+                <div class="course-box">
+                    <div class="course-title">MS-Office</div>
+                    <div class="course-details">
+                        <ul>
+                            <li>General Concepts</li>
+                            <li>MS-Windows</li>
+                            <li>MS-Office (Word, Excel, Access, PowerPoint)</li>
+                            <li>Internet</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- DTP Course -->
+                <div class="course-box">
+                    <div class="course-title">DTP (Desk Top Publishing)</div>
+                    <div class="course-details">
+                        <ul>
+                            <li>PageMaker</li>
+                            <li>Photoshop</li>
+                            <li>CorelDRAW</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Short Term Courses -->
+            <div class="additional-course course-box">
+                <div class="course-title">Additional Short Term Courses</div>
+                <div class="course-details">
+                    <ul>
+                        <li>C-Language</li>
+                        <li>C++</li>
+                        <li>Data Structures Using C / C++</Data></li>
+                        <li>Java</li>
+                        <li>Oracle Data Base</li>
+                        <li>Visual Basic</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div id="footer-content" class="footer-content">
+            <div>
+                <p>&copy; 2024 Vignan ICSS. All rights reserved.</p>
+            </div>
+
+            <div>
+                <p>Opp. Neha Shine Hospital, Mettugadda, Mahabubnagar</p>
+            </div>
+
+            <div>
+                <p>Email: <a href="mailto:vignan.icss@gmail.com">vignan.icss@gmail.com</a></p>
+                <p>Phone: <a href="tel:9441248646">9441248646</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function showCourses(courseType) {
+            // Hide both lists first
+            document.getElementById('longTerm').style.display = 'none';
+            document.getElementById('shortTerm').style.display = 'none';
+
+            // Display the selected list
+            if (courseType === 'longTerm') {
+                document.getElementById('longTerm').style.display = 'block';
+                document.getElementById('opening-image').style.display = 'none';
+                document.querySelector('.footer-content').classList.remove('fixed');
+            } else if (courseType === 'shortTerm') {
+                document.getElementById('shortTerm').style.display = 'block';
+                document.getElementById('opening-image').style.display = 'none';
+                document.querySelector('.footer-content').classList.add('fixed');
+            }
+        }
+    </script>
+
+</body>
+
+</html>

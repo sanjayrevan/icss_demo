@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vignan ICSS - Admission Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            padding-right: 0px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 30%;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .hidden {
+            display: none;
+        }
+        .footer{
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        select{
+            width: 102% !important;
+        }
+    </style>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <!-- Header -->
+ <!-- Header -->
+<header class="header">
+    <div class="logo">Vignan ICSS</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./courses.html">Courses</a></li>
+            <li><a href="./aboutUs.html">About Us</a></li>
+            <li><a href="./admission.html">Admissions</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="phone button">
+        <a href="tel:9441248646" class="call-button">
+            <img src="assets/download (1).jpeg" alt="Phone Icon" class="imgp" /> 
+            9441248646
+        </a>
+    </div>
+</header>
+<!--Admission Form-->
+<div class="container">
+    <h1>Admission Form</h1>
+    <form id="admissionForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+        
+        <label for="courseType">Course Type:</label>
+        <select id="courseType" name="courseType" onchange="updateCourseOptions()" required>
+            <option value="">Select course type</option>
+            <option value="shortTerm">Short Term Courses</option>
+            <option value="longTerm">Long Term Courses</option>
+        </select>
+
+        <!-- Drop-down for Short Term and Long Term Courses -->
+        <div id="courseContainer" class="hidden">
+            <label for="course">Select Course:</label>
+            <select id="course" name="course" required>
+                <!-- Courses will be dynamically added here -->
+            </select>
+        </div>
+
+        <!-- Hidden input field -->
+        <input type="hidden" id="formName" name="formName" value="admission">
+
+        <button type="submit" value="Submit">Submit</button>
+    </form>
+</div>
+
+
+<script>
+    // Short term and long term courses
+    const shortTermCourses = [
+        { value: 'MS Office', text: 'MS-Office' },
+        { value: 'DTP', text: 'DTP (Desk Top Publishing)' },
+        { value: 'C Language', text: 'C Language' },
+        { value: 'C++', text: 'C ++' },
+        { value: 'Data Structures Using C/C++', text: 'Data Structures Using C/C++' },
+        { value: 'java', text: 'Java' },
+        { value: 'Oracle Data Base', text: 'Oracle Data Base' },
+        { value: 'VisualBasic', text: 'Visual Basic' }
+    ];
+
+    const longTermCourses = [
+        { value: 'DCA', text: 'DCA (Diploma in Computer Applications)' },
+        { value: 'PGDCA', text: 'PGDCA (Post Graduate Diploma in Computer Applications)' }
+    ];
+
+    function updateCourseOptions() {
+        const courseType = document.getElementById('courseType').value;
+        const courseSelect = document.getElementById('course');
+        const courseContainer = document.getElementById('courseContainer');
+
+        // Clear previous options
+        courseSelect.innerHTML = '';
+        let courses = [];
+
+        if (courseType === 'shortTerm') {
+            courses = shortTermCourses;
+        } else if (courseType === 'longTerm') {
+            courses = longTermCourses;
+        }
+
+        // Populate the new course options based on the selected type
+        if (courses.length > 0) {
+            courseContainer.classList.remove('hidden');
+            courses.forEach(course => {
+                const option = document.createElement('option');
+                option.value = course.value;
+                option.text = course.text;
+                courseSelect.appendChild(option);
+            });
+        } else {
+            courseContainer.classList.add('hidden');
+        }
+    }
+
+    // Form submission event
+    document.getElementById('admissionForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form from submitting the traditional way
+
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const courseType = document.getElementById('courseType').value;
+        const course = document.getElementById('course').value;
+
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('phone', phone);
+        formData.append('courseType', courseType);
+        formData.append('course', course);
+        formData.append('formName', document.getElementById('formName').value);
+
+        fetch('https://script.google.com/macros/s/AKfycbzdweHFkcbKTPxKMvC-QMmg-CgqpmgMnOMcRDYT-J5WHhqTj9YcG0E-NMZSeXCMHJGdSA/exec', { // Replace with your Apps Script Web App URL
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.text()) // Use response.text() for simpler response handling
+        .then(result => alert('Form submitted successfully!'))
+        .catch(error => alert('Error submitting form!'));
+    });
+</script>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
+        <div>
+            <p>&copy; 2024 Vignan ICSS. All rights reserved.</p>
+        </div>
+        
+        <div>
+            <p>Opp. Neha Shine Hospital, Mettugadda, Mahabubnagar</p>
+        </div>
+
+        <div>
+            <p>Email: <a href="mailto:vignan.icss@gmail.com">vignan.icss@gmail.com</a></p>
+            <p>Phone: <a href="tel:9441248646">9441248646</a></p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
